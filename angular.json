@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "werush-test"
+    }
+  },
+  "defaultProject": "werush-test",
+  "cli": {
+    "analytics": "9dabe0ec-8d90-43a1-9bab-aad7c0093e4e"
+  }
 }

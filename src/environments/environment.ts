@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyCPDJy8FTPtsZCVUt-ybB2kcWQAYIY4jxY',
+    authDomain: 'werush-test-db.firebaseapp.com',
+    databaseURL: 'https://werush-test-db.firebaseio.com',
+    projectId: 'werush-test-db',
+    storageBucket: 'werush-test-db.appspot.com',
+    messagingSenderId: '513892929459',
+  }
 };
 
 /*
