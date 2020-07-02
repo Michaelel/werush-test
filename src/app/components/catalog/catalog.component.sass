@@ -1,0 +1,87 @@
+@import "../../../assets/palette"
+
+.title-block
+  display: flex
+  align-items: center
+  margin-bottom: 30px
+  .title
+    font-size: 30px
+    margin-right: 10px
+    font-weight: 500
+  .count
+    background: $accent-color
+    border-radius: 5px
+    font-size: 20px
+    color: #fff
+    padding: 3px 7px
+
+.games
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  .game-card
+    grid-column: span 3
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 20px
+    -webkit-perspective: 400px
+    perspective: 400px
+    -webkit-transform-style: preserve-3d
+    transform-style: preserve-3d
+    &:hover
+      .transform
+        background-color: $primary-color
+        -webkit-transform: rotateY(180deg)
+        -ms-transform: rotateY(180deg)
+        transform: rotateY(180deg)
+        .img-container, .game-title-container
+          opacity: 0
+        .game-big-title
+          opacity: 1
+
+    .game-big-title
+      text-align: center
+      color: #fff
+      font-size: 20px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%) rotateY(180deg)
+      opacity: 0
+      transition: 2s all
+    .img-container
+      opacity: 1
+      padding: 10px
+      background-color: #cccccc
+      width: 200px
+      height: 200px
+      transition: all 2s
+      img
+        width: 200px
+        height: 200px
+    .game-title-container
+      opacity: 1
+      width: 200px
+      background-color: $primary-color
+      display: flex
+      justify-content: center
+      align-items: center
+      color: #fff
+      font-size: 20px
+      padding: 10px
+      transition: all 2s
+    .transform
+      width: 220px
+      transition: all 2s
+      cursor: pointer
+
+@media (max-width: 1250px)
+  .games .game-card
+    grid-column: span 4
+@media (max-width: 950px)
+  .games .game-card
+    grid-column: span 6
+@media (max-width: 650px)
+  .games .game-card
+    grid-column: span 12

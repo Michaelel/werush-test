@@ -1,0 +1,28 @@
+<div class="title-block">
+    <div class="title">
+        Most popular
+    </div>
+    <div class="count">
+        <ng-container *ngIf="state === componentState.Loading; else count">
+            <mat-progress-spinner diameter="20" color="warn" mode="indeterminate"></mat-progress-spinner>
+        </ng-container>
+        <ng-template #count>
+            {{ games?.length }}
+        </ng-template>
+    </div>
+</div>
+<app-component-state [state]="state">
+    <div class="games">
+        <div class="game-card" *ngFor="let game of games">
+            <div class="transform">
+                <div class="img-container">
+                    <img [src]="game.img" [alt]="game.title">
+                </div>
+                <div class="game-title-container">
+                    <div class="game-small-title">{{ game.title }}</div>
+                </div>
+                <div class="game-big-title">{{ game.title }}</div>
+            </div>
+        </div>
+    </div>
+</app-component-state>
